@@ -12,12 +12,14 @@ import 'quill_localizations_ca.dart';
 import 'quill_localizations_cs.dart';
 import 'quill_localizations_da.dart';
 import 'quill_localizations_de.dart';
+import 'quill_localizations_el.dart';
 import 'quill_localizations_en.dart';
 import 'quill_localizations_es.dart';
 import 'quill_localizations_fa.dart';
 import 'quill_localizations_fr.dart';
 import 'quill_localizations_he.dart';
 import 'quill_localizations_hi.dart';
+import 'quill_localizations_hu.dart';
 import 'quill_localizations_id.dart';
 import 'quill_localizations_it.dart';
 import 'quill_localizations_ja.dart';
@@ -137,6 +139,7 @@ abstract class FlutterQuillLocalizations {
     Locale('cs'),
     Locale('da'),
     Locale('de'),
+    Locale('el'),
     Locale('en'),
     Locale('en', 'US'),
     Locale('es'),
@@ -144,6 +147,7 @@ abstract class FlutterQuillLocalizations {
     Locale('fr'),
     Locale('he'),
     Locale('hi'),
+    Locale('hu'),
     Locale('id'),
     Locale('it'),
     Locale('ja'),
@@ -777,12 +781,14 @@ class _FlutterQuillLocalizationsDelegate
         'cs',
         'da',
         'de',
+        'el',
         'en',
         'es',
         'fa',
         'fr',
         'he',
         'hi',
+        'hu',
         'id',
         'it',
         'ja',
@@ -876,6 +882,8 @@ FlutterQuillLocalizations lookupFlutterQuillLocalizations(Locale locale) {
       return FlutterQuillLocalizationsDa();
     case 'de':
       return FlutterQuillLocalizationsDe();
+    case 'el':
+      return FlutterQuillLocalizationsEl();
     case 'en':
       return FlutterQuillLocalizationsEn();
     case 'es':
@@ -888,6 +896,8 @@ FlutterQuillLocalizations lookupFlutterQuillLocalizations(Locale locale) {
       return FlutterQuillLocalizationsHe();
     case 'hi':
       return FlutterQuillLocalizationsHi();
+    case 'hu':
+      return FlutterQuillLocalizationsHu();
     case 'id':
       return FlutterQuillLocalizationsId();
     case 'it':

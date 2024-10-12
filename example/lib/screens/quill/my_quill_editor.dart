@@ -5,8 +5,8 @@ import 'package:cached_network_image/cached_network_image.dart'
 import 'package:desktop_drop/desktop_drop.dart' show DropTarget;
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/extensions.dart';
 import 'package:flutter_quill/flutter_quill.dart';
+import 'package:flutter_quill/flutter_quill_internal.dart';
 import 'package:flutter_quill_extensions/flutter_quill_extensions.dart';
 // ignore: implementation_imports
 import 'package:flutter_quill_extensions/src/editor/image/widgets/image.dart'
@@ -128,11 +128,14 @@ class MyQuillEditor extends StatelessWidget {
                     },
                   ),
                   videoEmbedConfigurations: QuillEditorVideoEmbedConfigurations(
-                    // Loading YouTube videos on Desktop is not supported yet
-                    // when using iframe platform view
-                    youtubeVideoSupportMode: isDesktopApp
-                        ? YoutubeVideoSupportMode.customPlayerWithDownloadUrl
-                        : YoutubeVideoSupportMode.iframeView,
+                    customVideoBuilder: (videoUrl, readOnly) {
+                      // Example: Check for YouTube Video URL and return your
+                      // YouTube video widget here.
+
+                      // Otherwise return null to fallback to the defualt logic
+                      return null;
+                    },
+                    ignoreYouTubeSupport: true,
                   ),
                 )),
           TimeStampEmbedBuilderWidget(),
